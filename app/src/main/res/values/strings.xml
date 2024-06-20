@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Android Serminar</string>
+    <string name="home">Home</string>
+    <string name="productivity">Productivity</string>
+    <string name="settings">Settings</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_page">Home Page</string>
+    <string name="productivity_page">Productivity page</string>
+    <string name="settings_page">Settings page</string>
+</resources>
