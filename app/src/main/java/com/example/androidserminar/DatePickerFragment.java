@@ -38,13 +38,11 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         populateSetDate(year, month+1, dayOfMonth);
     }
     public void populateSetDate(int year, int month, int day) {
-        //TextView dob = (TextView)getActivity(). findViewById(R.id.tvDate);
         if (tvShowDate != null) {
-            tvShowDate.setText(month+"/"+day+"/"+year);
+            tvShowDate.setText(day + "/" + month + "/" + year);
         }
         if (edtShowDate != null){
-            edtShowDate.setText(month+"/"+day+"/"+year);
+            edtShowDate.setText(day + "/" + month + "/" + year);
         }
-
     }
 }
