@@ -8,4 +8,9 @@
     <string name="home_page">Home Page</string>
     <string name="productivity_page">Productivity page</string>
     <string name="settings_page">Settings page</string>
+    <string name="product_name">Product Name</string>
+    <string name="_1000">1000</string>
+    <string name="_1">1</string>
+    <string name="date">Date</string>
+    <string name="date_picker">Date picker</string>
 </resources>

@@ -2,11 +2,14 @@ package com.example.androidserminar;
 
 import android.os.Bundle;
 
+import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +62,16 @@ public class ProductivityFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_productivity, container, false);
+        View view = inflater.inflate(R.layout.fragment_productivity, container, false);
+        Button datePicker = view.findViewById(R.id.btnDatePicker);
+        TextView tvDate = view.findViewById(R.id.tvDate);
+        datePicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DialogFragment newFragment = new DatePickerFragment(tvDate, null);
+                newFragment.show(getParentFragmentManager(), "DatePicker");
+            }
+        });
+        return view;
     }
 }
