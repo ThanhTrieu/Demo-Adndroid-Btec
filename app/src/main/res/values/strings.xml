@@ -13,4 +13,12 @@
     <string name="_1">1</string>
     <string name="date">Date</string>
     <string name="date_picker">Date picker</string>
+    <string name="enter_url">Enter url</string>
+    <string name="go_to_url">Go to Url</string>
+    <string name="enter_phone_number">enter phone number</string>
+    <string name="call_phone_number">Call phone number</string>
+    <string name="go_to_demointent_activity">Go to DemoIntent Activity</string>
+    <string name="go_to_other_activity">Go to other Activity</string>
+    <string name="send_data_to_otther_activity">Send Data to otther Activity</string>
+    <string name="send_data_to_other_activity">Send data to other Activity</string>
 </resources>
