@@ -28,4 +28,13 @@
     <string name="sum_number">Sum Number</string>
     <string name="clear">Clear</string>
     <string name="history">History</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="name">NAME</string>
+    <string name="password">PASSWORD</string>
+    <string name="save">SAVE</string>
+    <string name="next">NEXT</string>
+    <string name="load">LOAD</string>
+    <string name="back">BACK</string>
+    <string name="title_activity_main2">Main2Activity</string>
 </resources>

@@ -21,8 +21,10 @@
         <activity android:name=".TestIntent"/>
         <activity android:name=".MainActivity"/>
         <activity android:name=".DemoIntent"/>
+        <activity android:name=".SharedPreferencesActivity"/>
+        <activity android:name=".InternalStorageSecondActivity"/>
         <activity
-            android:name=".SharedPreferencesActivity"
+            android:name=".InternalStorageActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
