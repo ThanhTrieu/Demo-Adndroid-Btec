@@ -20,8 +20,9 @@
         tools:targetApi="31">
         <activity android:name=".TestIntent"/>
         <activity android:name=".MainActivity"/>
+        <activity android:name=".DemoIntent"/>
         <activity
-            android:name=".DemoIntent"
+            android:name=".SharedPreferencesActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

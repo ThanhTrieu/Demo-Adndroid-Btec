@@ -21,4 +21,11 @@
     <string name="go_to_other_activity">Go to other Activity</string>
     <string name="send_data_to_otther_activity">Send Data to otther Activity</string>
     <string name="send_data_to_other_activity">Send data to other Activity</string>
+    <string name="enter_number">Enter Number</string>
+    <string name="result">Result</string>
+    <string name="number_1">Number 1</string>
+    <string name="number_2">Number 2</string>
+    <string name="sum_number">Sum Number</string>
+    <string name="clear">Clear</string>
+    <string name="history">History</string>
 </resources>
