@@ -13,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.FileInputStream;
 
 public class InternalStorageSecondActivity extends AppCompatActivity {
-    private TextView getname, getpass;
+    private TextView getName, getPass;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_internal_storage);
-        getname = findViewById(R.id.getname);
-        getpass = findViewById(R.id.getpass);
+        getName = findViewById(R.id.getname);
+        getPass = findViewById(R.id.getpass);
     }
 
     public void  loadMe(View view)
@@ -34,14 +34,13 @@ public class InternalStorageSecondActivity extends AppCompatActivity {
             Log.d("Code", buffer.toString());
             String name = buffer.substring(0,buffer.indexOf(" "));
             String pass = buffer.substring(buffer.indexOf(" ")+1);
-            getname.setText(name);
-            getpass.setText(pass);
+            getName.setText(name);
+            getPass.setText(pass);
             Toast.makeText(this,"Load Success", Toast.LENGTH_SHORT).show();
         } catch (Exception e) {
             e.printStackTrace();
             Toast.makeText(this,"Load Failed", Toast.LENGTH_SHORT).show();
         }
-
     }
 
     public void  backMe( View view)
