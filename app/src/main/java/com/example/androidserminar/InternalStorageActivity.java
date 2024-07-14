@@ -15,19 +15,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class InternalStorageActivity extends AppCompatActivity {
-    private EditText editname, editpass;
+    private EditText editName, editPass;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_internal_storage);
-        editname = (EditText) findViewById(R.id.editName);
-        editpass = (EditText) findViewById(R.id.editPass);
+        editName = (EditText) findViewById(R.id.editName);
+        editPass = (EditText) findViewById(R.id.editPass);
     }
-    public void  saveMe(View view)  // SAVE
-    {
+    public void  saveMe(View view) {
         File file= null;
-        String name = editname.getText().toString().trim();
-        String password = editpass.getText().toString().trim();
+        String name = editName.getText().toString().trim();
+        String password = editPass.getText().toString().trim();
 
         FileOutputStream fileOutputStream = null;
         try {
@@ -37,8 +36,8 @@ public class InternalStorageActivity extends AppCompatActivity {
             fileOutputStream.write(name.getBytes());
             fileOutputStream.write(password.getBytes());
             Toast.makeText(this, "Saved \n" + "Path --" + file + "\tCode.txt", Toast.LENGTH_SHORT).show();
-            editname.setText("");
-            editpass.setText("");
+            editName.setText("");
+            editPass.setText("");
         } catch (Exception ex) {
             ex.printStackTrace();
         } finally {
@@ -49,8 +48,7 @@ public class InternalStorageActivity extends AppCompatActivity {
             }
         }
     }
-    public void  nextMe(View view)   //NEXT
-    {
+    public void  nextMe(View view)  {
         Toast.makeText(this,"NEXT", Toast.LENGTH_SHORT).show();
         Intent intent= new Intent(InternalStorageActivity.this, InternalStorageSecondActivity.class);
         startActivity(intent);

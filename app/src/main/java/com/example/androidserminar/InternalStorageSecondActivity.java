@@ -22,8 +22,7 @@ public class InternalStorageSecondActivity extends AppCompatActivity {
         getPass = findViewById(R.id.getpass);
     }
 
-    public void  loadMe(View view)
-    {
+    public void  loadMe(View view) {
         try {
             FileInputStream fileInputStream =  openFileInput("Code.txt");
             int read = -1;
@@ -43,8 +42,7 @@ public class InternalStorageSecondActivity extends AppCompatActivity {
         }
     }
 
-    public void  backMe( View view)
-    {
+    public void  backMe( View view) {
         Toast.makeText(this,"Back", Toast.LENGTH_SHORT).show();
         Intent intent= new Intent(InternalStorageSecondActivity.this, InternalStorageActivity.class);
         startActivity(intent);
