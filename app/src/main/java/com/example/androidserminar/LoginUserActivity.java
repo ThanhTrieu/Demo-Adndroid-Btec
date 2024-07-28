@@ -28,24 +28,28 @@ public class LoginUserActivity extends AppCompatActivity {
         btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                User data = login();
-                assert data != null;
-                String email = data.getEmail();
-                Toast.makeText(LoginUserActivity.this, email, Toast.LENGTH_LONG).show();
+                login();
             }
         });
     }
-    private User login(){
+    private void login(){
         String user = edtUsername.getText().toString().trim();
         String pass = edtPassword.getText().toString().trim();
         if (TextUtils.isEmpty(user)){
             edtUsername.setError("Username can be not empty");
-            return null;
+            return;
         }
         if (TextUtils.isEmpty(pass)){
             edtPassword.setError("Password can be not empty");
-            return null;
+            return;
         }
-        return dbHandlerUsers.getSingleUserInfo(user, pass);
+        User data = dbHandlerUsers.getSingleUserInfo(user, pass);
+        assert data != null;
+        if (data.getPhone() != null) {
+            String email = data.getEmail();
+            Toast.makeText(LoginUserActivity.this, email, Toast.LENGTH_LONG).show();
+        } else {
+            Toast.makeText(LoginUserActivity.this, "Account invalid", Toast.LENGTH_LONG).show();
+        }
     }
 }

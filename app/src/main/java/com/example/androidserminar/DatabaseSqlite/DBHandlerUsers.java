@@ -86,30 +86,36 @@ public class DBHandlerUsers extends SQLiteOpenHelper {
 
     }
     public User getSingleUserInfo(String username, String password){
-
-        SQLiteDatabase database = this.getWritableDatabase();
-        String [] columns = { ID_COL, USERNAME_COL, EMAIL_COL, PHONE_COL };
-        String selection = USERNAME_COL + " = ?" + " AND " + PASSWORD_COL + " = ?";
-        String[] selectionArgs = { username , password };
-        Cursor cursor = database.query(
-                TABLE_NAME,
-                columns,
-                selection,
-                selectionArgs,
-                null,
-                null,
-                null
-        );
-        cursor.moveToFirst();
-        //setting related user info in User Object
+        Cursor cursor = null;
         User user = new User();
-        user.setId(cursor.getInt(cursor.getColumnIndex(ID_COL)));
-        user.setUsername(cursor.getString(cursor.getColumnIndex(USERNAME_COL)));
-        user.setEmail(cursor.getString(cursor.getColumnIndex(EMAIL_COL)));
-        user.setPhone(cursor.getString(cursor.getColumnIndex(PHONE_COL)));
-        //close cursor & database
-        cursor.close();
-        database.close();
+        try {
+            SQLiteDatabase database = this.getWritableDatabase();
+            String[] columns = {ID_COL, USERNAME_COL, EMAIL_COL, PHONE_COL};
+            String selection = USERNAME_COL + " = ?" + " AND " + PASSWORD_COL + " = ?";
+            String[] selectionArgs = {username, password};
+            cursor = database.query(
+                    TABLE_NAME,
+                    columns,
+                    selection,
+                    selectionArgs,
+                    null,
+                    null,
+                    null
+            );
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                //setting related user info in User Object
+                user.setId(cursor.getInt(cursor.getColumnIndex(ID_COL)));
+                user.setUsername(cursor.getString(cursor.getColumnIndex(USERNAME_COL)));
+                user.setEmail(cursor.getString(cursor.getColumnIndex(EMAIL_COL)));
+                user.setPhone(cursor.getString(cursor.getColumnIndex(PHONE_COL)));
+            }
+            //close cursor & database
+            database.close();
+        } finally {
+            assert cursor != null;
+            cursor.close();
+        }
         return user;
     }
 }
