@@ -37,4 +37,10 @@
     <string name="load">LOAD</string>
     <string name="back">BACK</string>
     <string name="title_activity_main2">Main2Activity</string>
+    <string name="register_account">Register Account</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="submit">Submit</string>
+    <string name="login">Login</string>
 </resources>

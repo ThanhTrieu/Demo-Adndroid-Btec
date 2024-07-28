@@ -23,8 +23,10 @@
         <activity android:name=".DemoIntent"/>
         <activity android:name=".SharedPreferencesActivity"/>
         <activity android:name=".InternalStorageSecondActivity"/>
+        <activity android:name=".InternalStorageActivity"/>
+        <activity android:name=".LoginUserActivity"/>
         <activity
-            android:name=".InternalStorageActivity"
+            android:name=".RegisterAccountActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
